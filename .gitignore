@@ -7,5 +7,6 @@
 *.tfstate.*
 *.terraform
 .terraform/*
+terraform.tfstate
 
 *.pem
