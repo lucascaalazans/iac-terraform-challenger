@@ -19,6 +19,7 @@ resource "aws_instance" "app_server" {
   key_name = "iac-alura"
 
   tags = {
-    Name = "Terraform Ansible Python"
+    Name = "Terraform Ansible Pythoon"
+
   }
 }
