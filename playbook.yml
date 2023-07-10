@@ -13,5 +13,17 @@
       name:
         - django
         - djangorestframework
-    
+  - name: Iniciando Projeto
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
+    ignore_errors: yes
+  - name: Alterando o Host dos settings.py
+    lineinfile:
+      path: /home/ubuntu/tcc/setup/settings.py
+      regexp: 'ALLOWED_HOSTS'
+      line: 'ALLOWED_HOSTS = ["*"]'
+      backrefs: yes
+  - name: Ativar venv e iniciar servidor django
+    shell: 'cd /home/ubuntu/tcc/; . venv/bin/activate; python manage.py runserver 0.0.0.0:8000'
+    ignore_errors: yes
+
     
